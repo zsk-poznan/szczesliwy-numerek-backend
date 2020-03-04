@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs').promises;
 (async () => {
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({executablePath: process.env.PUPPETEER_EXEC_PATH, headless: false, args:["--no-sandbox"]});
     const page = await browser.newPage();
     await page.goto("https://cufs.vulcan.net.pl/poznan/Account/LogOn?ReturnUrl=%2Fpoznan%2FFS%2FLS%3Fwa%3Dwsignin1.0%26wtrealm%3Dhttps%253a%252f%252fuonetplus.vulcan.net.pl%252fpoznan%252fLoginEndpoint.aspx%26wctx%3Dhttps%253a%252f%252fuonetplus.vulcan.net.pl%252fpoznan%252fLoginEndpoint.aspx");
     await page.evaluate((login, password) => {
