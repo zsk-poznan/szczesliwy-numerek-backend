@@ -1,0 +1,22 @@
+{
+  "name": "szczesliwy-numerek-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zsk-poznan/szczesliwy-numerek-backend.git"
+  },
+  "author": "kapskypl",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zsk-poznan/szczesliwy-numerek-backend/issues"
+  },
+  "homepage": "https://github.com/zsk-poznan/szczesliwy-numerek-backend#readme",
+  "dependencies": {
+    "puppeteer": "^2.1.1"
+  }
+}
