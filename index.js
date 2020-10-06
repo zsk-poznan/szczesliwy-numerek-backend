@@ -14,7 +14,7 @@ const fs = require('fs').promises;
             document.querySelector("#Password").value = password;
         }, process.env.VLogin, process.env.VPassword);
         await page.click('input[type="submit"]');
-        await page.waitForNavigation();
+        await page.waitFor(4000);
         await page.goto("https://uonetplus.vulcan.net.pl/poznan/Start.mvc/GetTeacherLuckyNumbers")
         var output = JSON.parse(await page.evaluate(() => document.querySelector("body").innerText));
         var liceum = parseInt(output["data"][0]["Zawartosc"][0]["Zawartosc"][0]["Nazwa"].match(/..$/));
