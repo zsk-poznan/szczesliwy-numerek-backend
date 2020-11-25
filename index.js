@@ -12,7 +12,7 @@ const fs = require('fs').promises;
         await page.evaluate((login, password) => {
             document.querySelector("#LoginName").value = login;
             document.querySelector("#Password").value = password;
-        }, process.env.VLogin, process.env.VPassword);
+        }, process.argv[2], process.argv[3]);
         await page.click('input[type="submit"]');
         await page.waitFor(4000);
         await page.goto("https://uonetplus.vulcan.net.pl/poznan/Start.mvc/GetTeacherLuckyNumbers")

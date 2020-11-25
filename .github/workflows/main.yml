@@ -18,12 +18,8 @@ jobs:
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: "true"
       - run: npm install
       - uses: mujo-code/puppeteer-headful@master
-        env:
-          CI: 'true'
-          VLogin: ${{ secrets.VLOGIN }}
-          VPassword: ${{ secrets.VPASSWORD }}
         with:
-          args: npm start
+          args: CI=true node . ${{ secrets.VLOGIN }} ${{ secrets.VPASSWORD }}
         
       - name: Install SSH Client
         uses: webfactory/ssh-agent@v0.2.0
